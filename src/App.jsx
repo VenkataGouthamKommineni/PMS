@@ -38,13 +38,6 @@ import FormValidationGuard from './components/FormValidationGuard'
 import { hasPermission, readAdminPermissions } from './config/permissions'
 import './App.css'
 
-
-
-
-
-
-
-
 function AdminPermissionRoute({ module, children }) {
   const permissions = readAdminPermissions()
   return hasPermission(permissions, module, 'view') ? children : <Navigate to="/admin/dashboard" replace />
